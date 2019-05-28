@@ -1,0 +1,16 @@
+PODS:
+  - CPTGridListManager (0.1.0)
+
+DEPENDENCIES:
+  - CPTGridListManager (from `../`)
+
+EXTERNAL SOURCES:
+  CPTGridListManager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CPTGridListManager: 2b1da64bd9729bd97bdf471d161fc9e96242f78f
+
+PODFILE CHECKSUM: 4735a99b4ef1fcf7664732dc7f5241e0030dba73
+
+COCOAPODS: 1.5.3

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291C82D9229C25A600700FEF /* TestCollectionViewSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C82C9229C25A600700FEF /* TestCollectionViewSupplementaryView.xib */; };
+		291C82DA229C25A600700FEF /* TestCollectionViewSupplementaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C82CA229C25A600700FEF /* TestCollectionViewSupplementaryView.m */; };
+		291C82DB229C25A600700FEF /* SampleImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291C82CD229C25A600700FEF /* SampleImages.xcassets */; };
+		291C82DC229C25A600700FEF /* CellDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C82D0229C25A600700FEF /* CellDataProvider.m */; };
+		291C82DD229C25A600700FEF /* CellDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C82D1229C25A600700FEF /* CellDataObject.m */; };
+		291C82DE229C25A600700FEF /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C82D3229C25A600700FEF /* TestCollectionViewCell.m */; };
+		291C82DF229C25A600700FEF /* UserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C82D4229C25A600700FEF /* UserCollectionViewCell.m */; };
+		291C82E0229C25A600700FEF /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C82D5229C25A600700FEF /* UserCollectionViewCell.xib */; };
+		291C82E1229C25A600700FEF /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C82D8229C25A600700FEF /* TestCollectionViewCell.xib */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -38,7 +47,21 @@
 
 /* Begin PBXFileReference section */
 		0EB6C581660E3ED4D741E6C3 /* Pods-CPTGridListManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPTGridListManager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPTGridListManager_Example/Pods-CPTGridListManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		593B3955C2E2DDA6DD34BF3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		291C82C9229C25A600700FEF /* TestCollectionViewSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionViewSupplementaryView.xib; sourceTree = "<group>"; };
+		291C82CA229C25A600700FEF /* TestCollectionViewSupplementaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewSupplementaryView.m; sourceTree = "<group>"; };
+		291C82CB229C25A600700FEF /* TestCollectionViewSupplementaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewSupplementaryView.h; sourceTree = "<group>"; };
+		291C82CD229C25A600700FEF /* SampleImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SampleImages.xcassets; sourceTree = "<group>"; };
+		291C82CE229C25A600700FEF /* CellDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellDataProvider.h; sourceTree = "<group>"; };
+		291C82CF229C25A600700FEF /* CellDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellDataObject.h; sourceTree = "<group>"; };
+		291C82D0229C25A600700FEF /* CellDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellDataProvider.m; sourceTree = "<group>"; };
+		291C82D1229C25A600700FEF /* CellDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellDataObject.m; sourceTree = "<group>"; };
+		291C82D3229C25A600700FEF /* TestCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewCell.m; sourceTree = "<group>"; };
+		291C82D4229C25A600700FEF /* UserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectionViewCell.m; sourceTree = "<group>"; };
+		291C82D5229C25A600700FEF /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
+		291C82D6229C25A600700FEF /* TestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
+		291C82D7229C25A600700FEF /* UserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewCell.h; sourceTree = "<group>"; };
+		291C82D8229C25A600700FEF /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
+		593B3955C2E2DDA6DD34BF3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CPTGridListManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPTGridListManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,13 +83,13 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D70BB4CF806907B3DBD1CA9 /* Pods_CPTGridListManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPTGridListManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84B11E80DB9F702029E86855 /* CPTGridListManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CPTGridListManager.podspec; path = ../CPTGridListManager.podspec; sourceTree = "<group>"; };
+		84B11E80DB9F702029E86855 /* CPTGridListManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CPTGridListManager.podspec; path = ../CPTGridListManager.podspec; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		908515BEB6C37FD65297D873 /* Pods-CPTGridListManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPTGridListManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPTGridListManager_Example/Pods-CPTGridListManager_Example.release.xcconfig"; sourceTree = "<group>"; };
 		94F8C440839677C1326E3EC1 /* Pods-CPTGridListManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPTGridListManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPTGridListManager_Tests/Pods-CPTGridListManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD5020AE8D1D67F7EC444CC1 /* Pods_CPTGridListManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPTGridListManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4F06181435E427C4E6B8A9 /* Pods-CPTGridListManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPTGridListManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPTGridListManager_Tests/Pods-CPTGridListManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E1E30B97B530F616BB7CB33A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E1E30B97B530F616BB7CB33A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +118,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		291C82C8229C25A600700FEF /* ExampleSupplementaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				291C82C9229C25A600700FEF /* TestCollectionViewSupplementaryView.xib */,
+				291C82CA229C25A600700FEF /* TestCollectionViewSupplementaryView.m */,
+				291C82CB229C25A600700FEF /* TestCollectionViewSupplementaryView.h */,
+			);
+			path = ExampleSupplementaryViews;
+			sourceTree = "<group>";
+		};
+		291C82CC229C25A600700FEF /* SampleDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				291C82CD229C25A600700FEF /* SampleImages.xcassets */,
+				291C82CE229C25A600700FEF /* CellDataProvider.h */,
+				291C82CF229C25A600700FEF /* CellDataObject.h */,
+				291C82D0229C25A600700FEF /* CellDataProvider.m */,
+				291C82D1229C25A600700FEF /* CellDataObject.m */,
+			);
+			path = SampleDataProvider;
+			sourceTree = "<group>";
+		};
+		291C82D2229C25A600700FEF /* ExampleCollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				291C82D3229C25A600700FEF /* TestCollectionViewCell.m */,
+				291C82D4229C25A600700FEF /* UserCollectionViewCell.m */,
+				291C82D5229C25A600700FEF /* UserCollectionViewCell.xib */,
+				291C82D6229C25A600700FEF /* TestCollectionViewCell.h */,
+				291C82D7229C25A600700FEF /* UserCollectionViewCell.h */,
+				291C82D8229C25A600700FEF /* TestCollectionViewCell.xib */,
+			);
+			path = ExampleCollectionViewCells;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +190,9 @@
 		6003F593195388D20070C39A /* Example for CPTGridListManager */ = {
 			isa = PBXGroup;
 			children = (
+				291C82D2229C25A600700FEF /* ExampleCollectionViewCells */,
+				291C82C8229C25A600700FEF /* ExampleSupplementaryViews */,
+				291C82CC229C25A600700FEF /* SampleDataProvider */,
 				6003F59C195388D20070C39A /* CPTGridListAppDelegate.h */,
 				6003F59D195388D20070C39A /* CPTGridListAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -244,10 +305,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CPTGridList;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "support@chronicstimulation.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = TPMZGZXERR;
+					};
 					6003F5AD195388D20070C39A = {
+						DevelopmentTeam = TPMZGZXERR;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -277,7 +342,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				291C82DB229C25A600700FEF /* SampleImages.xcassets in Resources */,
+				291C82E1229C25A600700FEF /* TestCollectionViewCell.xib in Resources */,
+				291C82E0229C25A600700FEF /* UserCollectionViewCell.xib in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				291C82D9229C25A600700FEF /* TestCollectionViewSupplementaryView.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -368,8 +437,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* CPTGridListAppDelegate.m in Sources */,
+				291C82DF229C25A600700FEF /* UserCollectionViewCell.m in Sources */,
 				6003F5A7195388D20070C39A /* CPTGridListViewController.m in Sources */,
+				291C82DD229C25A600700FEF /* CellDataObject.m in Sources */,
+				291C82DC229C25A600700FEF /* CellDataProvider.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				291C82DA229C25A600700FEF /* TestCollectionViewSupplementaryView.m in Sources */,
+				291C82DE229C25A600700FEF /* TestCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,19 +501,32 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -452,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,25 +554,38 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -497,9 +597,11 @@
 			baseConfigurationReference = 0EB6C581660E3ED4D741E6C3 /* Pods-CPTGridListManager_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TPMZGZXERR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPTGridListManager/CPTGridListManager-Prefix.pch";
 				INFOPLIST_FILE = "CPTGridListManager/CPTGridListManager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,9 +614,11 @@
 			baseConfigurationReference = 908515BEB6C37FD65297D873 /* Pods-CPTGridListManager_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TPMZGZXERR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPTGridListManager/CPTGridListManager-Prefix.pch";
 				INFOPLIST_FILE = "CPTGridListManager/CPTGridListManager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,6 +631,7 @@
 			baseConfigurationReference = 94F8C440839677C1326E3EC1 /* Pods-CPTGridListManager_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TPMZGZXERR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -551,6 +656,7 @@
 			baseConfigurationReference = CB4F06181435E427C4E6B8A9 /* Pods-CPTGridListManager_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = TPMZGZXERR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
