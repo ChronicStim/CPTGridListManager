@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CPTGridListManager'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'CPTGridListManager provides UICollectionViewLayouts for both List & Grid type display of cell data, AND the ability to animate the transition process from one layout type to the other. This framework is written in Objective-C and supports variable sizing UICollectionViews and UICollectionReusableViews in the layouts.'
 
 # This description is used to generate tags and improve search results.

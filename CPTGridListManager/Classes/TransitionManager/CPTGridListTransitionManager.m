@@ -24,7 +24,7 @@
 
 @implementation CPTGridListTransitionManager
 
--(instancetype)initWithDuration:(NSTimeInterval)duration collectionView:(UICollectionView *)collectionView destinationLayout:(UICollectionViewLayout *)destinationLayout layoutState:(LayoutState)layoutState;
+-(instancetype)initWithDuration:(NSTimeInterval)duration collectionView:(UICollectionView *)collectionView destinationLayout:(CPTGridListLayout *)destinationLayout layoutState:(LayoutState)layoutState;
 {
     self = [super init];
     if (self) {

@@ -1,5 +1,5 @@
 PODS:
-  - CPTGridListManager (0.1.0)
+  - CPTGridListManager (0.1.1)
 
 DEPENDENCIES:
   - CPTGridListManager (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CPTGridListManager: 2b1da64bd9729bd97bdf471d161fc9e96242f78f
+  CPTGridListManager: 5bd00bac1294de487df7c7ccdcab03b5c816db88
 
 PODFILE CHECKSUM: 4735a99b4ef1fcf7664732dc7f5241e0030dba73
 

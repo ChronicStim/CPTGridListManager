@@ -15,8 +15,6 @@
     CGFloat _initialListStackViewExtensionTrailingToTrailingEdgeDistanceInListState;
     CGFloat _initialGridStackViewHeightInListState;
 
-    CGFloat _gridStackViewListModeLayoutHeightFactor;
-    CGFloat _gridStackViewGridModeLayoutHeightFactor;
 }
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *gridStackViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *listStackViewExtensionTrailingEdgeConstraint;
@@ -37,9 +35,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    _gridStackViewListModeLayoutHeightFactor = 65.0f;
-    _gridStackViewGridModeLayoutHeightFactor = 0.0f;
     
     _initialListStackViewExtensionTrailingToTrailingEdgeDistanceInListState = self.listStackViewExtensionTrailingEdgeConstraint.constant;
     _initialGridStackViewHeightInListState = self.gridStackViewHeightConstraint.constant;

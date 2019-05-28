@@ -133,6 +133,14 @@
         return _gridLayout;
     }
     
+    _gridLayout = [[CPTGridListLayout alloc] initCPTGridListLayoutWithActiveLayoutStaticCellHeight:_gridLayoutStaticCellHeight nextLayoutStaticCellHeight:_listLayoutStaticCellHeight layoutState:grid cellPadding:CGPointMake(2, 2) gridLayoutCountOfColumns:5 desiredGridCellWtoHAspectRatio:1.0f];
+    _gridLayout.activeLayoutStaticHeaderHeight = 40.0f;
+    _gridLayout.nextLayoutStaticHeaderHeight = 55.0f;
+    _gridLayout.activeLayoutStaticFooterHeight = 10.0f;
+    _gridLayout.nextLayoutStaticFooterHeight = 40.0f;
+
+
+    /*
     _gridLayout = [[CPTGridListLayout alloc] initCPTGridListLayoutWithState:grid
                                              activeLayoutStaticHeaderHeight:_gridLayoutStaticHeaderHeight
                                                activeLayoutStaticCellHeight:_gridLayoutStaticCellHeight
@@ -140,7 +148,7 @@
                                                nextLayoutStaticHeaderHeight:_listLayoutStaticHeaderHeight
                                                  nextLayoutStaticCellHeight:_listLayoutStaticCellHeight
                                                nextLayoutStaticFooterHeight:_listLayoutStaticFooterHeight];
-    
+    */
     return _gridLayout;
 }
 
@@ -150,6 +158,13 @@
         return _listLayout;
     }
     
+    _listLayout = [[CPTGridListLayout alloc] initCPTGridListLayoutWithActiveLayoutStaticCellHeight:_listLayoutStaticCellHeight nextLayoutStaticCellHeight:_gridLayoutStaticCellHeight layoutState:list cellPadding:CGPointMake(2, 2) gridLayoutCountOfColumns:1 desiredGridCellWtoHAspectRatio:1.0f];
+    _listLayout.activeLayoutStaticHeaderHeight = 55.0f;
+    _listLayout.nextLayoutStaticHeaderHeight = 40.0f;
+    _listLayout.activeLayoutStaticFooterHeight = 40.0f;
+    _listLayout.nextLayoutStaticFooterHeight = 10.0f;
+    
+    /*
     _listLayout = [[CPTGridListLayout alloc] initCPTGridListLayoutWithState:list
                                              activeLayoutStaticHeaderHeight:_listLayoutStaticHeaderHeight
                                                activeLayoutStaticCellHeight:_listLayoutStaticCellHeight
@@ -157,7 +172,7 @@
                                                nextLayoutStaticHeaderHeight:_gridLayoutStaticHeaderHeight
                                                  nextLayoutStaticCellHeight:_gridLayoutStaticCellHeight
                                                nextLayoutStaticFooterHeight:_gridLayoutStaticFooterHeight];
-    
+    */
     return _listLayout;
 }
 
@@ -279,7 +294,7 @@
 {
     TestCollectionViewSupplementaryView <CPTGridListUICollectionReusableView> *suppView = (TestCollectionViewSupplementaryView <CPTGridListUICollectionReusableView> *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"TestCollectionViewSupplementaryView" forIndexPath:indexPath];
     
-    [suppView forLayoutMode:self.layoutState setupReusableViewLayoutConstraintsForTransitionProgress:1.0f cellSize:suppView.frame.size];
+    [suppView forLayoutMode:self.layoutState setupReusableViewOfKind:kind layoutConstraintsForTransitionProgress:1.0f reusableViewSize:suppView.frame.size];
     
     NSDictionary *sectionDetails = nil;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {

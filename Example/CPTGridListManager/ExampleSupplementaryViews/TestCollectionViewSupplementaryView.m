@@ -34,7 +34,7 @@
     // Initialization code
     
     _sectionHeaderHeightGrid = 35.0f;
-    _sectionHeaderHeightList = 60.0f;
+    _sectionHeaderHeightList = 55.0f;
     
     _initialSectionHeaderHeightConstraintValue = self.colorBackgroundViewHeightConstraint.constant;
 }
@@ -54,15 +54,19 @@
     self.layoutStyleLabel.text = sectionDetails[kTestCollectionViewSupplementaryViewLayoutStyleLabelText];
 }
 
--(void)forLayoutMode:(LayoutState)layoutState setupReusableViewLayoutConstraintsForTransitionProgress:(CGFloat)transitionProgress cellSize:(CGSize)cellSize;
+-(void)forLayoutMode:(LayoutState)layoutState setupReusableViewOfKind:(NSString *)kind layoutConstraintsForTransitionProgress:(CGFloat)transitionProgress reusableViewSize:(CGSize)reusableViewSize;
 {
     switch (layoutState) {
         case grid: {
             
-            self.colorBackgroundViewHeightConstraint.constant = ceilf((cellSize.height - _sectionHeaderHeightList) * transitionProgress + _sectionHeaderHeightList);
+            self.colorBackgroundViewHeightConstraint.constant = ceilf((reusableViewSize.height - _sectionHeaderHeightList) * transitionProgress + _sectionHeaderHeightList);
             
             self.colorBackgroundView.alpha = (transitionProgress <= 0.5f) ? (1 - transitionProgress) : transitionProgress;
 
+            if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+                self.sectionLabel.alpha = 1.0f - transitionProgress;
+                self.layoutStyleLabel.alpha = 1.0f - transitionProgress;
+            }
         }   break;
         case list: {
             
@@ -70,6 +74,8 @@
             
             self.colorBackgroundView.alpha = transitionProgress <= 0.5 ? (1 - transitionProgress) : transitionProgress;
 
+            self.sectionLabel.alpha = transitionProgress;
+            self.layoutStyleLabel.alpha = transitionProgress;
         }   break;
     }
 }
@@ -83,7 +89,7 @@
         CPTGridListLayoutAttributes *attributes = (CPTGridListLayoutAttributes *)layoutAttributes;
         if (0 < attributes.transitionProgress) {
             
-            [self forLayoutMode:attributes.layoutState setupReusableViewLayoutConstraintsForTransitionProgress:attributes.transitionProgress cellSize:attributes.nextLayoutCellFrame.size];
+            [self forLayoutMode:attributes.layoutState setupReusableViewOfKind:attributes.representedElementKind layoutConstraintsForTransitionProgress:attributes.transitionProgress reusableViewSize:attributes.nextLayoutCellFrame.size];
         }
     }
 }

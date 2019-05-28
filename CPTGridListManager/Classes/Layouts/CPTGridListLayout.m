@@ -11,38 +11,52 @@
 
 @interface CPTGridListLayout ()
 
-@property (nonatomic, assign) NSUInteger numberOfColumns;
-@property (nonatomic, assign) CGFloat activeLayoutStaticHeaderHeight;
-@property (nonatomic, assign) CGFloat nextLayoutStaticHeaderHeight;
-@property (nonatomic, assign) CGFloat activeLayoutStaticFooterHeight;
-@property (nonatomic, assign) CGFloat nextLayoutStaticFooterHeight;
-@property (nonatomic, assign) CGPoint supplementaryViewPadding;
-@property (nonatomic, assign) CGPoint cellPadding;
-@property (nonatomic, assign) CGFloat activeLayoutStaticCellHeight;
-@property (nonatomic, assign) CGFloat nextLayoutStaticCellHeight;
-@property (nonatomic, strong) NSValue *previousContentOffset;
 @property (nonatomic, assign) NSUInteger listLayoutCountOfColumns;
-@property (nonatomic, assign) NSUInteger gridLayoutCountOfColumns;
 @property (nonatomic, strong) NSMutableDictionary < NSIndexPath *, CPTGridListLayoutAttributes *> *baseLayoutAttributes;
 @property (nonatomic, strong) NSMutableDictionary < NSString *, NSMutableDictionary *> *baseLayoutSupplementaryAttributes; // By SuppView type to get NSMutDict, then by NSIndexPath to get attributes
+@property (nonatomic, strong) NSValue *previousContentOffset;
 @property (nonatomic, assign) CGFloat contentHeight;
 @property (nonatomic, assign) CGFloat contentWidth;
+@property (nonatomic, assign) NSUInteger numberOfColumns;
 
 @end
 
 @implementation CPTGridListLayout
 
+-(instancetype)initCPTGridListLayoutWithActiveLayoutStaticCellHeight:(CGFloat)activeLayoutStaticCellHeight nextLayoutStaticCellHeight:(CGFloat)nextLayoutStaticCellHeight layoutState:(LayoutState)layoutState;
+{
+    return [self initCPTGridListLayoutWithActiveLayoutStaticCellHeight:activeLayoutStaticCellHeight nextLayoutStaticCellHeight:nextLayoutStaticCellHeight layoutState:layoutState cellPadding:CGPointMake(6.0f,6.0f) gridLayoutCountOfColumns:3 desiredGridCellWtoHAspectRatio:1.0f];
+}
+
+-(instancetype)initCPTGridListLayoutWithActiveLayoutStaticCellHeight:(CGFloat)activeLayoutStaticCellHeight nextLayoutStaticCellHeight:(CGFloat)nextLayoutStaticCellHeight layoutState:(LayoutState)layoutState cellPadding:(CGPoint)cellPadding gridLayoutCountOfColumns:(NSUInteger)countOfColumns desiredGridCellWtoHAspectRatio:(CGFloat)desiredGridCellAspectRatio;
+{
+    self = [[CPTGridListLayout alloc] init];
+    if (self) {
+        
+        [self configureWithDefaultConditions];
+
+        _activeLayoutStaticCellHeight = activeLayoutStaticCellHeight;
+        _nextLayoutStaticCellHeight = nextLayoutStaticCellHeight;
+        _gridLayoutCountOfColumns = countOfColumns;
+        _layoutState = layoutState;
+        _cellPadding = cellPadding;
+        _supplementaryViewPadding = cellPadding;
+        _desiredGridCellAspectRatio = desiredGridCellAspectRatio;
+    }
+    return self;
+}
+
 -(instancetype)initCPTGridListLayoutWithState:(LayoutState)layoutState
                activeLayoutStaticHeaderHeight:(CGFloat)activeLayoutStaticHeaderHeight
                  activeLayoutStaticCellHeight:(CGFloat)activeLayoutStaticCellHeight
                activeLayoutStaticFooterHeight:(CGFloat)activeLayoutStaticFooterHeight
-               nextLayoutStaticHeaderHeight:(CGFloat)nextLayoutStaticHeaderHeight
-                 nextLayoutStaticCellHeight:(CGFloat)nextLayoutStaticCellHeight
+                 nextLayoutStaticHeaderHeight:(CGFloat)nextLayoutStaticHeaderHeight
+                   nextLayoutStaticCellHeight:(CGFloat)nextLayoutStaticCellHeight
                  nextLayoutStaticFooterHeight:(CGFloat)nextLayoutStaticFooterHeight;
 {
     self = [[CPTGridListLayout alloc] init];
     if (self) {
-
+        
         [self configureWithDefaultConditions];
         
         _layoutState = layoutState;
@@ -57,35 +71,12 @@
     return self;
 }
 
--(instancetype)initCPTGridListLayoutWithActiveLayoutStaticCellHeight:(CGFloat)activeLayoutStaticCellHeight nextLayoutStaticCellHeight:(CGFloat)nextLayoutStaticCellHeight layoutState:(LayoutState)layoutState;
-{
-    return [self initCPTGridListLayoutWithActiveLayoutStaticCellHeight:activeLayoutStaticCellHeight nextLayoutStaticCellHeight:nextLayoutStaticCellHeight layoutState:layoutState cellPadding:CGPointMake(6.0f,6.0f) gridLayoutCountOfColumns:3];
-}
-
--(instancetype)initCPTGridListLayoutWithActiveLayoutStaticCellHeight:(CGFloat)activeLayoutStaticCellHeight nextLayoutStaticCellHeight:(CGFloat)nextLayoutStaticCellHeight layoutState:(LayoutState)layoutState cellPadding:(CGPoint)cellPadding gridLayoutCountOfColumns:(NSUInteger)countOfColumns;
-{
-    self = [[CPTGridListLayout alloc] init];
-    if (self) {
-        
-        [self configureWithDefaultConditions];
-
-        _activeLayoutStaticCellHeight = activeLayoutStaticCellHeight;
-        _nextLayoutStaticCellHeight = nextLayoutStaticCellHeight;
-        _gridLayoutCountOfColumns = countOfColumns;
-        _layoutState = layoutState;
-        _cellPadding = cellPadding;
-        _supplementaryViewPadding = cellPadding;
-        
-    }
-    return self;
-}
-
 -(void)configureWithDefaultConditions;
 {
     _layoutState = list;
     _activeLayoutStaticHeaderHeight = 60.0f;
     _activeLayoutStaticCellHeight = 50.0f;
-    _activeLayoutStaticFooterHeight = 35.0f;
+    _activeLayoutStaticFooterHeight = 60.0f;
     _nextLayoutStaticHeaderHeight = 0.0f;
     _nextLayoutStaticCellHeight = 80.0f;
     _nextLayoutStaticFooterHeight = 0.0;
@@ -93,9 +84,90 @@
     _supplementaryViewPadding = CGPointMake(6.0f, 6.0f);
     _listLayoutCountOfColumns = 1;
     _gridLayoutCountOfColumns = 3;
+    _desiredGridCellAspectRatio = 0.0f;
 }
 
 #pragma mark - Property Setters/Getters
+
+-(void)setLayoutState:(LayoutState)layoutState;
+{
+    if (layoutState != _layoutState) {
+        _layoutState = layoutState;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setCellPadding:(CGPoint)cellPadding;
+{
+    if (cellPadding.x != _cellPadding.x || cellPadding.y != _cellPadding.y) {
+        _cellPadding = cellPadding;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setSupplementaryViewPadding:(CGPoint)supplementaryViewPadding;
+{
+    if (supplementaryViewPadding.x != _supplementaryViewPadding.x || supplementaryViewPadding.y != _supplementaryViewPadding.y) {
+        _supplementaryViewPadding = supplementaryViewPadding;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setActiveLayoutStaticCellHeight:(CGFloat)activeLayoutStaticCellHeight;
+{
+    if (activeLayoutStaticCellHeight != _activeLayoutStaticCellHeight) {
+        _activeLayoutStaticCellHeight = activeLayoutStaticCellHeight;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setNextLayoutStaticCellHeight:(CGFloat)nextLayoutStaticCellHeight;
+{
+    if (nextLayoutStaticCellHeight != _nextLayoutStaticCellHeight) {
+        _nextLayoutStaticCellHeight = nextLayoutStaticCellHeight;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setActiveLayoutStaticHeaderHeight:(CGFloat)activeLayoutStaticHeaderHeight;
+{
+    if (activeLayoutStaticHeaderHeight != _activeLayoutStaticHeaderHeight) {
+        _activeLayoutStaticHeaderHeight = activeLayoutStaticHeaderHeight;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setNextLayoutStaticHeaderHeight:(CGFloat)nextLayoutStaticHeaderHeight;
+{
+    if (nextLayoutStaticHeaderHeight != _nextLayoutStaticHeaderHeight) {
+        _nextLayoutStaticHeaderHeight = nextLayoutStaticHeaderHeight;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setActiveLayoutStaticFooterHeight:(CGFloat)activeLayoutStaticFooterHeight;
+{
+    if (activeLayoutStaticFooterHeight != _activeLayoutStaticFooterHeight) {
+        _activeLayoutStaticFooterHeight = activeLayoutStaticFooterHeight;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setGridLayoutCountOfColumns:(NSUInteger)gridLayoutCountOfColumns;
+{
+    if (gridLayoutCountOfColumns != _gridLayoutCountOfColumns) {
+        _gridLayoutCountOfColumns = gridLayoutCountOfColumns;
+        [self invalidateLayout];
+    }
+}
+
+-(void)setDesiredGridCellAspectRatio:(CGFloat)desiredGridCellAspectRatio;
+{
+    if (desiredGridCellAspectRatio != _desiredGridCellAspectRatio) {
+        _desiredGridCellAspectRatio = desiredGridCellAspectRatio;
+        [self invalidateLayout];
+    }
+}
 
 -(NSUInteger)numberOfColumns;
 {
@@ -163,18 +235,27 @@
         [yOffsets addObject:@(floorf(self.contentHeight))];
     }
     
+    if (grid == _layoutState && 0 < _desiredGridCellAspectRatio) {
+        // If this layout is for a Grid format and a desiredGridCellAspectRatio has been specified, recalculate the layoutStaticCellHeight for the grid LayoutState
+        
+        CGFloat availableColumnWidth = columnWidth - (2 * _cellPadding.x);
+        CGFloat calculatedMaxCellHeight = availableColumnWidth / _desiredGridCellAspectRatio;
+        
+        _activeLayoutStaticCellHeight = calculatedMaxCellHeight;
+    }
+    
     NSInteger sections = [self.collectionView numberOfSections];
     for (int section = 0; section < sections; section++) {
         
         NSIndexPath *sectionIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
         CPTGridListLayoutAttributes *headerAttributes = [CPTGridListLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:sectionIndexPath];
-        if (headerAttributes && 0.0f < self.activeLayoutStaticHeaderHeight) {
-            CGFloat headerHeight = self.supplementaryViewPadding.y + self.activeLayoutStaticHeaderHeight;
+        if (headerAttributes && 0.0f < _activeLayoutStaticHeaderHeight) {
+            CGFloat headerHeight = _supplementaryViewPadding.y + _activeLayoutStaticHeaderHeight;
             
             // Use the maximum yOffset across all columns
             CGFloat suppViewFrameY = [[yOffsets valueForKeyPath:@"@max.floatValue"] floatValue];
             CGRect headerFrame = CGRectMake(0, suppViewFrameY, self.contentWidth, headerHeight);
-            CGRect headerInsetFrame = CGRectInset(headerFrame, self.supplementaryViewPadding.x, self.supplementaryViewPadding.y);
+            CGRect headerInsetFrame = CGRectInset(headerFrame, _supplementaryViewPadding.x, _supplementaryViewPadding.y);
             if (CGRectIsNull(headerInsetFrame)) { headerInsetFrame = CGRectZero;}
             
             headerAttributes.frame = headerInsetFrame;
@@ -195,9 +276,9 @@
         for (int item = 0; item < itemsInSection; item++) {
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];
-            CGFloat height = self.cellPadding.y + self.activeLayoutStaticCellHeight;
+            CGFloat height = _cellPadding.y + _activeLayoutStaticCellHeight;
             CGRect frame = CGRectMake(xOffsets[column].floatValue, yOffsets[column].floatValue, columnWidth, height);
-            CGRect insetFrame = CGRectInset(frame,self.cellPadding.x,self.cellPadding.y);
+            CGRect insetFrame = CGRectInset(frame,_cellPadding.x,_cellPadding.y);
             CPTGridListLayoutAttributes *attributes = [CPTGridListLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
   
             if (CGRectIsNull(insetFrame)) {
@@ -212,13 +293,13 @@
         }
         
         CPTGridListLayoutAttributes *footerAttributes = [CPTGridListLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:sectionIndexPath];
-        if (footerAttributes && 0.0f < self.activeLayoutStaticFooterHeight) {
-            CGFloat footerHeight = self.supplementaryViewPadding.y + self.activeLayoutStaticFooterHeight;
+        if (footerAttributes && 0.0f < _activeLayoutStaticFooterHeight) {
+            CGFloat footerHeight = _supplementaryViewPadding.y + _activeLayoutStaticFooterHeight;
             
             // Use the maximum yOffset across all columns
             CGFloat suppViewFrameY = [[yOffsets valueForKeyPath:@"@max.floatValue"] floatValue];
             CGRect footerFrame = CGRectMake(0, suppViewFrameY, self.contentWidth, footerHeight);
-            CGRect footerInsetFrame = CGRectInset(footerFrame, self.supplementaryViewPadding.x, self.supplementaryViewPadding.y);
+            CGRect footerInsetFrame = CGRectInset(footerFrame, _supplementaryViewPadding.x, _supplementaryViewPadding.y);
             if (CGRectIsNull(footerInsetFrame)) { footerInsetFrame = CGRectZero;}
             
             footerAttributes.frame = footerInsetFrame;
@@ -290,14 +371,14 @@
             return previousContentOffsetPoint;
         }
         
-        switch (self.layoutState) {
+        switch (_layoutState) {
             case grid: {
-                CGFloat realOffsetY = ceilf((previousContentOffsetPoint.y / self.nextLayoutStaticCellHeight * self.activeLayoutStaticCellHeight / (CGFloat)self.numberOfColumns) - self.cellPadding.y);
-                CGFloat offsetY = floorf(realOffsetY / self.activeLayoutStaticCellHeight) * self.activeLayoutStaticCellHeight + self.cellPadding.y;
+                CGFloat realOffsetY = ceilf((previousContentOffsetPoint.y / _nextLayoutStaticCellHeight * _activeLayoutStaticCellHeight / (CGFloat)self.numberOfColumns) - _cellPadding.y);
+                CGFloat offsetY = floorf(realOffsetY / _activeLayoutStaticCellHeight) * _activeLayoutStaticCellHeight + _cellPadding.y;
                 return CGPointMake(superContentOffset.x, offsetY);
             }   break;
             case list: {
-                CGFloat offsetY = ceilf( previousContentOffsetPoint.y + (self.activeLayoutStaticCellHeight * previousContentOffsetPoint.y / self.nextLayoutStaticCellHeight) + self.cellPadding.y);
+                CGFloat offsetY = ceilf( previousContentOffsetPoint.y + (_activeLayoutStaticCellHeight * previousContentOffsetPoint.y / _nextLayoutStaticCellHeight) + _cellPadding.y);
                 return CGPointMake(superContentOffset.x, offsetY);
             }   break;
         }
