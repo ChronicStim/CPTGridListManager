@@ -73,7 +73,7 @@
     
     if (kExampleModeIncludeSectionHeaders) {
         _listLayoutStaticHeaderHeight = 60.0f;
-        _gridLayoutStaticHeaderHeight = 35.0f;
+        _gridLayoutStaticHeaderHeight = 45.0f;
     } else {
         _listLayoutStaticHeaderHeight = 0.0f;
         _gridLayoutStaticHeaderHeight = 0.0f;
@@ -81,7 +81,7 @@
     
     if (kExampleModeIncludeSectionFooters) {
         _listLayoutStaticFooterHeight = 60.0f;
-        _gridLayoutStaticFooterHeight = 40.0f;
+        _gridLayoutStaticFooterHeight = 45.0f;
     } else {
         _listLayoutStaticFooterHeight = 0.0f;
         _gridLayoutStaticFooterHeight = 0.0f;
@@ -90,7 +90,7 @@
     self.layoutState = list;
     self.isTransitionAvailable = YES;
     self.rotationButton.animationDuration = _animationDuration;
-    [self.rotationButton buttonSelectedDisplayNextLayoutState:list animate:YES];
+    [self.rotationButton buttonSelectedDisplayNextLayoutState:grid animate:YES];
     
     [self setupCollectionView];
 }
@@ -213,6 +213,8 @@
     }
     
     CPTGridListTransitionManager *transitionManager = nil;
+    LayoutState previousState = self.layoutState; // which will also be the nextLayoutState for the animatedButton
+    
     switch (self.layoutState) {
         case list: {
             
@@ -231,7 +233,7 @@
     if (transitionManager) {
         
         [transitionManager startInteractiveTransition];
-        [self.rotationButton buttonSelectedDisplayNextLayoutState:self.layoutState animate:YES];
+        [self.rotationButton buttonSelectedDisplayNextLayoutState:previousState animate:YES];
     }
 }
 

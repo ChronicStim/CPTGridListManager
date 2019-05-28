@@ -56,17 +56,16 @@
     _nextLayoutState = nextLayoutState;
 
     if (animate) {
-        [self animateRotation];
+        [self animateRotationWithDuration:self.animationDuration];
     } else {
-        [self adjustTransformsForNextLayoutState:nextLayoutState];
-        [self drawLine];
+        [self animateRotationWithDuration:0];
     }
 }
 
 -(void)adjustTransformsForNextLayoutState:(LayoutState)nextLayoutState;
 {
     switch (nextLayoutState) {
-        case list: {
+        case grid: {
             
             self.transform = CGAffineTransformMakeRotation(-M_PI_2);
             for (int index = 0; index < _itemsCount; index++) {
@@ -76,7 +75,7 @@
             }
             
         }   break;
-        case grid: {
+        case list: {
             
             self.transform = CGAffineTransformIdentity;
             for (int index = 0; index < _itemsCount; index++) {
@@ -109,8 +108,7 @@
     for (int lineLayer = 0; lineLayer < _itemsCount; lineLayer++) {
         [self.layer addSublayer:self.lineLayers[lineLayer]];
     }
-    
-    [self buttonSelectedDisplayNextLayoutState:grid animate:NO];
+    [self drawLineForInitialState:grid];
 }
 
 -(NSMutableArray <CAShapeLayer *> *)lineLayers;
@@ -132,19 +130,19 @@
     return _lineLayers;
 }
 
--(void)animateRotation;
+-(void)animateRotationWithDuration:(NSTimeInterval)duration;
 {
     __weak __typeof__(self) weakSelf = self;
-    [UIView animateWithDuration:self.animationDuration animations:^{
+    [UIView animateWithDuration:duration animations:^{
         __typeof__(self) strongSelf = weakSelf;
 
         [strongSelf adjustTransformsForNextLayoutState:strongSelf->_nextLayoutState];
         
         CABasicAnimation *strokeEndAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        strokeEndAnimation.duration = strongSelf.animationDuration;
+        strokeEndAnimation.duration = duration;
         
         CABasicAnimation *lineWidthAnimation = [CABasicAnimation animationWithKeyPath:@"lineWidth"];
-        lineWidthAnimation.duration = strongSelf.animationDuration;
+        lineWidthAnimation.duration = duration;
         
         for (int index = 0; index < strongSelf->_itemsCount; index++) {
             CAShapeLayer *lineLayer = strongSelf.lineLayers[index];
@@ -154,7 +152,7 @@
     }];
 }
 
--(void)drawLine;
+-(void)drawLineForInitialState:(LayoutState)initialLayoutState;
 {
     CGFloat heightDelta = 0.2;
     for (int index = 0; index < _itemsCount; index++) {
@@ -176,6 +174,8 @@
         lineLayer.strokeColor = [self.lineColor CGColor];
         lineLayer.lineWidth = _listLineWidth;
     }
+    
+    [self adjustTransformsForNextLayoutState:initialLayoutState];
 }
 
 @end
