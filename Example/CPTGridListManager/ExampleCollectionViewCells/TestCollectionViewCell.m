@@ -52,15 +52,25 @@
     switch (layoutState) {
         case grid: {
             
+            // @tp0 = cellSize.height   @tp1 = cellSize.height
             self.gridStackViewHeightConstraint.constant = cellSize.height;
+            
+            // @tp0 = (cellSize.width-cellSize.height)      @tp1 = 0
             self.listStackViewExtensionTrailingEdgeConstraint.constant = ceilf((cellSize.width-self.gridStackViewHeightConstraint.constant)*(1.0f-transitionProgress));
+            
+            // @tp0 = 0     @tp1 = 1
             self.gridTextLabel.alpha = transitionProgress;
 
         }   break;
         case list: {
             
+            // @tp0 = cellSize.height   @tp1 = cellSize.height
             self.gridStackViewHeightConstraint.constant = cellSize.height;
+            
+            // @tp0 = 0     @tp1 = (cellSize.width-cellSize.height)
             self.listStackViewExtensionTrailingEdgeConstraint.constant = ceilf((cellSize.width-self.gridStackViewHeightConstraint.constant)*transitionProgress);
+            
+            // @tp0 = 1     @tp1 = 0
             self.gridTextLabel.alpha = 1 - transitionProgress;
 
         }   break;

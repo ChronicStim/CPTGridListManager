@@ -36,7 +36,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-mq-jxZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ezj-0V-bnn">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -66,41 +66,33 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWC-9s-uS7" userLabel="CPTGridListAnimatedButton" customClass="CPTGridListAnimatedButton">
-                                        <rect key="frame" x="29" y="4" width="25" height="25"/>
+                                        <rect key="frame" x="25" y="0.0" width="33" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Uhn-v1-d9W"/>
-                                            <constraint firstAttribute="width" constant="25" id="lDo-9f-f9F"/>
+                                            <constraint firstAttribute="width" secondItem="qWC-9s-uS7" secondAttribute="height" multiplier="1:1" id="WdC-Ya-x71"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olK-ew-4OE">
-                                        <rect key="frame" x="0.0" y="0.0" width="83" height="33"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BoJ-55-3yQ"/>
+                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eaw-WD-mld"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="olK-ew-4OE" firstAttribute="width" secondItem="Y7Z-5b-tpy" secondAttribute="width" id="70X-3z-wf3"/>
+                                    <constraint firstItem="qWC-9s-uS7" firstAttribute="height" relation="lessThanOrEqual" secondItem="Y7Z-5b-tpy" secondAttribute="height" id="G0B-Qh-yGH"/>
                                     <constraint firstItem="qWC-9s-uS7" firstAttribute="centerX" secondItem="Y7Z-5b-tpy" secondAttribute="centerX" id="b9L-YQ-mP5"/>
                                     <constraint firstItem="qWC-9s-uS7" firstAttribute="centerY" secondItem="Y7Z-5b-tpy" secondAttribute="centerY" id="bPa-Nu-CML"/>
-                                    <constraint firstItem="olK-ew-4OE" firstAttribute="height" secondItem="Y7Z-5b-tpy" secondAttribute="height" id="gaq-Ag-tgl"/>
-                                    <constraint firstItem="olK-ew-4OE" firstAttribute="centerX" secondItem="Y7Z-5b-tpy" secondAttribute="centerX" id="kot-tQ-fTe"/>
-                                    <constraint firstItem="olK-ew-4OE" firstAttribute="centerY" secondItem="Y7Z-5b-tpy" secondAttribute="centerY" id="oau-RT-7nz"/>
+                                    <constraint firstItem="qWC-9s-uS7" firstAttribute="width" relation="lessThanOrEqual" secondItem="Y7Z-5b-tpy" secondAttribute="width" id="bcO-p3-ixe"/>
                                 </constraints>
                             </view>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="changeLayoutButton" destination="olK-ew-4OE" id="TTV-2I-KGH"/>
                         <outlet property="collectionView" destination="Xcf-mq-jxZ" id="RKC-v1-YmP"/>
-                        <outlet property="rotationButton" destination="qWC-9s-uS7" id="TnV-DV-FqL"/>
+                        <outlet property="rotationButton" destination="qWC-9s-uS7" id="twm-g5-q5o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

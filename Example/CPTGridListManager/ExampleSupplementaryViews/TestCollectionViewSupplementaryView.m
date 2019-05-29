@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *outerContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *sectionLabel;
+@property (weak, nonatomic) IBOutlet UIView *indentedContainerView;
 @property (weak, nonatomic) IBOutlet UIView *colorBackgroundView;
 @property (weak, nonatomic) IBOutlet UIView *upperBorderStripeView;
 @property (weak, nonatomic) IBOutlet UIView *lowerBorderStripeView;

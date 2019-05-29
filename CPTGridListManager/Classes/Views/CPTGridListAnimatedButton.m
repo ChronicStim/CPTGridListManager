@@ -98,7 +98,7 @@
     _itemsCount = 6;
     self.animationDuration = 0.25;
     self.lineColor = [UIColor greenColor];
-
+    self.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 -(void)awakeFromNib;

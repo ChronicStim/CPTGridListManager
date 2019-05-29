@@ -143,11 +143,11 @@
 		291C82D2229C25A600700FEF /* ExampleCollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				291C82D3229C25A600700FEF /* TestCollectionViewCell.m */,
+				291C82D7229C25A600700FEF /* UserCollectionViewCell.h */,
 				291C82D4229C25A600700FEF /* UserCollectionViewCell.m */,
 				291C82D5229C25A600700FEF /* UserCollectionViewCell.xib */,
 				291C82D6229C25A600700FEF /* TestCollectionViewCell.h */,
-				291C82D7229C25A600700FEF /* UserCollectionViewCell.h */,
+				291C82D3229C25A600700FEF /* TestCollectionViewCell.m */,
 				291C82D8229C25A600700FEF /* TestCollectionViewCell.xib */,
 			);
 			path = ExampleCollectionViewCells;

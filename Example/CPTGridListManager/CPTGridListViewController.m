@@ -14,7 +14,7 @@
 #import "TestCollectionViewSupplementaryView.h"
 #import "UserCollectionViewCell.h"
 
-#define kExampleModeDisplayUserCollectionViewCell 0
+#define kExampleModeDisplayUserCollectionViewCell 1
 #define kExampleModeIncludeSectionHeaders 1
 #define kExampleModeIncludeSectionFooters 1
 
@@ -37,7 +37,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIButton *changeLayoutButton;
 @property (weak, nonatomic) IBOutlet CPTGridListAnimatedButton *rotationButton;
 @property (nonatomic, strong) CellDataProvider *cellDataProvider;
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
@@ -87,12 +86,12 @@
         _gridLayoutStaticFooterHeight = 0.0f;
     }
     
-    self.layoutState = list;
-    self.isTransitionAvailable = YES;
-    self.rotationButton.animationDuration = _animationDuration;
-    [self.rotationButton buttonSelectedDisplayNextLayoutState:grid animate:YES];
-    
     [self setupCollectionView];
+
+    self.isTransitionAvailable = YES;
+
+    self.rotationButton.animationDuration = _animationDuration;
+    [self.rotationButton buttonSelectedDisplayNextLayoutState:grid animate:YES];    
 }
 
 #pragma mark - Property Methods
@@ -137,7 +136,7 @@
     _gridLayout.activeLayoutStaticHeaderHeight = 40.0f;
     _gridLayout.nextLayoutStaticHeaderHeight = 55.0f;
     _gridLayout.activeLayoutStaticFooterHeight = 10.0f;
-    _gridLayout.nextLayoutStaticFooterHeight = 40.0f;
+    _gridLayout.nextLayoutStaticFooterHeight = 55.0f;
 
 
     /*
@@ -158,10 +157,10 @@
         return _listLayout;
     }
     
-    _listLayout = [[CPTGridListLayout alloc] initCPTGridListLayoutWithActiveLayoutStaticCellHeight:_listLayoutStaticCellHeight nextLayoutStaticCellHeight:_gridLayoutStaticCellHeight layoutState:list cellPadding:CGPointMake(2, 2) gridLayoutCountOfColumns:1 desiredGridCellWtoHAspectRatio:1.0f];
+    _listLayout = [[CPTGridListLayout alloc] initCPTGridListLayoutWithActiveLayoutStaticCellHeight:_listLayoutStaticCellHeight nextLayoutStaticCellHeight:_gridLayoutStaticCellHeight layoutState:list cellPadding:CGPointMake(2, 2) gridLayoutCountOfColumns:1 desiredGridCellWtoHAspectRatio:0.0f];
     _listLayout.activeLayoutStaticHeaderHeight = 55.0f;
     _listLayout.nextLayoutStaticHeaderHeight = 40.0f;
-    _listLayout.activeLayoutStaticFooterHeight = 40.0f;
+    _listLayout.activeLayoutStaticFooterHeight = 55.0f;
     _listLayout.nextLayoutStaticFooterHeight = 10.0f;
     
     /*
@@ -187,6 +186,7 @@
 
 -(void)setupCollectionView;
 {
+    self.layoutState = list;
     self.collectionView.collectionViewLayout = self.listLayout;
     
     if (kExampleModeDisplayUserCollectionViewCell) {
