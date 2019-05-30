@@ -9,8 +9,7 @@ In iOS programming, there are situations where you want to display a set of data
 
 That is where CPTGridListManager comes in. This framework provides custom UICollectionViewLayout Grid & List style layouts, UICollectionViewTransitionLayout, and a CPTGridListTransitionManager to enable smooth animation switching between these two formats. 
 
-![Screenshot]
-(http://d2n9hatzxce9g4.cloudfront.net/wp-content/uploads/DemoVideoFor_CPTGridListManager.gif?x87524)
+![Preview](https://github.com/ChronicStim/CPTGridListManager/blob/master/Example/CPTGridListManager/screencapture/DemoVideoFor_CPTGridListManager.gif)
 
 The framework even provides an animated button that can be used to trigger the layout change animation. Supplementary views (section headers & footers) are also supported by the animation engine. 
 
