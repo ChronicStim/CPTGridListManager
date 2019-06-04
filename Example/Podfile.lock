@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CPTGridListManager: 2c40b90ecf76b05fa58cb0afc72f10bdd6ecbeea
+  CPTGridListManager: 1c1831dc2c92c84df680aebf1790d6bbe2da456c
 
 PODFILE CHECKSUM: 4735a99b4ef1fcf7664732dc7f5241e0030dba73
 

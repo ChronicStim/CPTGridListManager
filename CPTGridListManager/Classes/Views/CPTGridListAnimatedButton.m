@@ -24,7 +24,6 @@
     CAShapeLayer *_lineLayer5;
     CAShapeLayer *_lineLayer6;
 }
-@property (nonatomic, strong) IBInspectable UIColor *lineColor;
 @property (nonatomic, strong) NSMutableArray <CAShapeLayer *> *lineLayers;
 @property (nonatomic, assign) LayoutState nextLayoutState;
 

@@ -11,6 +11,7 @@
 
 @interface CPTGridListAnimatedButton : UIButton
 
+@property (nonatomic, strong) IBInspectable UIColor *lineColor;
 @property (nonatomic, assign) NSTimeInterval animationDuration;
 
 /**
