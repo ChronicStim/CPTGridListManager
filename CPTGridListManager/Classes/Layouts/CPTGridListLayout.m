@@ -375,11 +375,11 @@
             case grid: {
                 CGFloat realOffsetY = ceilf((previousContentOffsetPoint.y / _nextLayoutStaticCellHeight * _activeLayoutStaticCellHeight / (CGFloat)self.numberOfColumns) - _cellPadding.y);
                 CGFloat offsetY = floorf(realOffsetY / _activeLayoutStaticCellHeight) * _activeLayoutStaticCellHeight + _cellPadding.y;
-                return CGPointMake(superContentOffset.x, offsetY);
+                superContentOffset = CGPointMake(superContentOffset.x, offsetY);
             }   break;
             case list: {
                 CGFloat offsetY = ceilf( previousContentOffsetPoint.y + (_activeLayoutStaticCellHeight * previousContentOffsetPoint.y / _nextLayoutStaticCellHeight) + _cellPadding.y);
-                return CGPointMake(superContentOffset.x, offsetY);
+                superContentOffset = CGPointMake(superContentOffset.x, offsetY);
             }   break;
         }
     }
