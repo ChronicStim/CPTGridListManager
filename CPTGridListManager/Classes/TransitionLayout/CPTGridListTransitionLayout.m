@@ -42,6 +42,23 @@
     return attributes;
 }
 
+-(UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath;
+{
+    UICollectionViewLayoutAttributes *attributes = [super layoutAttributesForSupplementaryViewOfKind:elementKind atIndexPath:indexPath];
+    if (nil != attributes && [attributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+        
+        CPTGridListLayoutAttributes *layoutAttributes = (CPTGridListLayoutAttributes *)attributes;
+        layoutAttributes.transitionProgress = self.transitionProgress;
+        layoutAttributes.layoutState = self.layoutState;
+        
+        UICollectionViewLayoutAttributes *nextLayoutAttributes = [self.nextLayout layoutAttributesForSupplementaryViewOfKind:elementKind atIndexPath:indexPath];
+        if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+            layoutAttributes.nextLayoutCellFrame = nextLayoutAttributes.frame;
+        }
+    }
+    return attributes;
+}
+
 -(void)setupNextLayoutWithActiveAttributes:(NSArray *)activeAttributes inRect:(CGRect)rect;
 {
     NSArray *nextAttributes = [self.nextLayout layoutAttributesForElementsInRect:rect];
