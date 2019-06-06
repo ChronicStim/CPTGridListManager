@@ -637,9 +637,11 @@
 			baseConfigurationReference = 0EB6C581660E3ED4D741E6C3 /* Pods-CPTGridListManager_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = TPMZGZXERR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPTGridListManager/CPTGridListManager-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "CPTGridListManager/CPTGridListManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
@@ -654,9 +656,12 @@
 			baseConfigurationReference = 908515BEB6C37FD65297D873 /* Pods-CPTGridListManager_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = TPMZGZXERR;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPTGridListManager/CPTGridListManager-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "CPTGridListManager/CPTGridListManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
