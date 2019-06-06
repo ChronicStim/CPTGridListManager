@@ -61,65 +61,48 @@
 
 -(void)setupNextLayoutWithActiveAttributes:(NSArray *)activeAttributes inRect:(CGRect)rect;
 {
-    NSArray *nextAttributes = [self.nextLayout layoutAttributesForElementsInRect:rect];
-    
-    if (nil != nextAttributes) {
-
-        for (UICollectionViewLayoutAttributes *activeLayoutAttributes in activeAttributes) {
-            
-            switch (activeLayoutAttributes.representedElementCategory) {
-                case UICollectionElementCategoryCell: {
+    for (UICollectionViewLayoutAttributes *activeLayoutAttributes in activeAttributes) {
+        
+        switch (activeLayoutAttributes.representedElementCategory) {
+            case UICollectionElementCategoryCell: {
+                
+                if ([activeLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
                     
-                    if ([activeLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
-                        
-                        CPTGridListLayoutAttributes *activeLayoutAttributesGridList = (CPTGridListLayoutAttributes *)activeLayoutAttributes;
-                        activeLayoutAttributesGridList.transitionProgress = self.transitionProgress;
-                        activeLayoutAttributesGridList.layoutState = self.layoutState;
-                        
-                        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-                            
-                            return (NSOrderedSame == [activeLayoutAttributesGridList.indexPath compare:[(CPTGridListLayoutAttributes *)evaluatedObject indexPath]]);
-                        }];
-                        
-                        NSArray *matchingNextLayoutAttributes = [nextAttributes filteredArrayUsingPredicate:predicate];
-                        if ([matchingNextLayoutAttributes count]) {
-                            
-                            UICollectionViewLayoutAttributes *nextLayoutAttributes = matchingNextLayoutAttributes[0];
-                            if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
-                                activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
-                            }
-                        }
-                    }
-                }   break;
-                case UICollectionElementCategorySupplementaryView: {
+                    CPTGridListLayoutAttributes *activeLayoutAttributesGridList = (CPTGridListLayoutAttributes *)activeLayoutAttributes;
+                    activeLayoutAttributesGridList.transitionProgress = self.transitionProgress;
+                    activeLayoutAttributesGridList.layoutState = self.layoutState;
                     
-                    if ([activeLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
-                        
-                        CPTGridListLayoutAttributes *activeLayoutAttributesGridList = (CPTGridListLayoutAttributes *)activeLayoutAttributes;
-                        activeLayoutAttributesGridList.transitionProgress = self.transitionProgress;
-                        activeLayoutAttributesGridList.layoutState = self.layoutState;
-                        
-                        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-                            
-                            BOOL matchingKind = [activeLayoutAttributesGridList.representedElementKind isEqualToString:[(CPTGridListLayoutAttributes *)evaluatedObject representedElementKind]];
-                            BOOL matchingSection = (activeLayoutAttributesGridList.indexPath.section == [(CPTGridListLayoutAttributes *)evaluatedObject indexPath].section);
-                            return (matchingKind && matchingSection);
-                        }];
-                        
-                        NSArray *matchingNextLayoutAttributes = [nextAttributes filteredArrayUsingPredicate:predicate];
-                        if ([matchingNextLayoutAttributes count]) {
-                            
-                            UICollectionViewLayoutAttributes *nextLayoutAttributes = matchingNextLayoutAttributes[0];
-                            if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
-                                activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
-                            }
-                        }
+                    UICollectionViewLayoutAttributes *nextLayoutAttributes = [self.nextLayout layoutAttributesForItemAtIndexPath:activeLayoutAttributesGridList.indexPath];
+                    
+                    if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+                        activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
+                    } else {
+                        NSLog(@"Cell Item for (%ld,%ld) could not locate matching attributes in NextLayout",activeLayoutAttributesGridList.indexPath.section,activeLayoutAttributesGridList.indexPath.item);
                     }
-                }   break;
-                case UICollectionElementCategoryDecorationView:
-                default:
-                    break;
-            }
+                    
+                }
+            }   break;
+            case UICollectionElementCategorySupplementaryView: {
+                
+                if ([activeLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+                    
+                    CPTGridListLayoutAttributes *activeLayoutAttributesGridList = (CPTGridListLayoutAttributes *)activeLayoutAttributes;
+                    activeLayoutAttributesGridList.transitionProgress = self.transitionProgress;
+                    activeLayoutAttributesGridList.layoutState = self.layoutState;
+                    
+                    UICollectionViewLayoutAttributes *nextLayoutAttributes = [self.nextLayout layoutAttributesForSupplementaryViewOfKind:activeLayoutAttributesGridList.representedElementKind atIndexPath:activeLayoutAttributesGridList.indexPath];
+                    
+                    if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+                        activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
+                    } else {
+                        NSLog(@"%@ for Section %ld could not locate matching attributes in NextLayout",activeLayoutAttributesGridList.representedElementKind,activeLayoutAttributesGridList.indexPath.section   );
+                    }
+                    
+                }
+            }   break;
+            case UICollectionElementCategoryDecorationView:
+            default:
+                break;
         }
     }
 }
