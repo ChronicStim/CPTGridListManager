@@ -62,24 +62,65 @@
 -(void)setupNextLayoutWithActiveAttributes:(NSArray *)activeAttributes inRect:(CGRect)rect;
 {
     NSArray *nextAttributes = [self.nextLayout layoutAttributesForElementsInRect:rect];
-    NSInteger index = 0;
-    for (UICollectionViewLayoutAttributes *activeLayoutAttributes in activeAttributes) {
-        
-        if ([activeLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+    
+    if (nil != nextAttributes) {
+
+        for (UICollectionViewLayoutAttributes *activeLayoutAttributes in activeAttributes) {
             
-            CPTGridListLayoutAttributes *activeLayoutAttributesGridList = (CPTGridListLayoutAttributes *)activeLayoutAttributes;
-            activeLayoutAttributesGridList.transitionProgress = self.transitionProgress;
-            activeLayoutAttributesGridList.layoutState = self.layoutState;
-            
-            if (nil != nextAttributes && index < [nextAttributes count]) {
-                
-                UICollectionViewLayoutAttributes *nextLayoutAttributes = nextAttributes[index];
-                if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
-                    activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
-                }
+            switch (activeLayoutAttributes.representedElementCategory) {
+                case UICollectionElementCategoryCell: {
+                    
+                    if ([activeLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+                        
+                        CPTGridListLayoutAttributes *activeLayoutAttributesGridList = (CPTGridListLayoutAttributes *)activeLayoutAttributes;
+                        activeLayoutAttributesGridList.transitionProgress = self.transitionProgress;
+                        activeLayoutAttributesGridList.layoutState = self.layoutState;
+                        
+                        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+                            
+                            return (NSOrderedSame == [activeLayoutAttributesGridList.indexPath compare:[(CPTGridListLayoutAttributes *)evaluatedObject indexPath]]);
+                        }];
+                        
+                        NSArray *matchingNextLayoutAttributes = [nextAttributes filteredArrayUsingPredicate:predicate];
+                        if ([matchingNextLayoutAttributes count]) {
+                            
+                            UICollectionViewLayoutAttributes *nextLayoutAttributes = matchingNextLayoutAttributes[0];
+                            if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+                                activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
+                            }
+                        }
+                    }
+                }   break;
+                case UICollectionElementCategorySupplementaryView: {
+                    
+                    if ([activeLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+                        
+                        CPTGridListLayoutAttributes *activeLayoutAttributesGridList = (CPTGridListLayoutAttributes *)activeLayoutAttributes;
+                        activeLayoutAttributesGridList.transitionProgress = self.transitionProgress;
+                        activeLayoutAttributesGridList.layoutState = self.layoutState;
+                        
+                        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+                            
+                            BOOL matchingKind = [activeLayoutAttributesGridList.representedElementKind isEqualToString:[(CPTGridListLayoutAttributes *)evaluatedObject representedElementKind]];
+                            BOOL matchingSection = (activeLayoutAttributesGridList.indexPath.section == [(CPTGridListLayoutAttributes *)evaluatedObject indexPath].section);
+                            return (matchingKind && matchingSection);
+                        }];
+                        
+                        NSArray *matchingNextLayoutAttributes = [nextAttributes filteredArrayUsingPredicate:predicate];
+                        if ([matchingNextLayoutAttributes count]) {
+                            
+                            UICollectionViewLayoutAttributes *nextLayoutAttributes = matchingNextLayoutAttributes[0];
+                            if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
+                                activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
+                            }
+                        }
+                    }
+                }   break;
+                case UICollectionElementCategoryDecorationView:
+                default:
+                    break;
             }
         }
-        index++;
     }
 }
 

@@ -16,6 +16,13 @@
 		291C82DF229C25A600700FEF /* UserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 291C82D4229C25A600700FEF /* UserCollectionViewCell.m */; };
 		291C82E0229C25A600700FEF /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C82D5229C25A600700FEF /* UserCollectionViewCell.xib */; };
 		291C82E1229C25A600700FEF /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291C82D8229C25A600700FEF /* TestCollectionViewCell.xib */; };
+		29F5B6D722A947CB00E4833D /* Dosis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29F5B6D022A947CB00E4833D /* Dosis-Regular.otf */; };
+		29F5B6D822A947CB00E4833D /* Dosis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29F5B6D122A947CB00E4833D /* Dosis-Light.otf */; };
+		29F5B6D922A947CB00E4833D /* Dosis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29F5B6D222A947CB00E4833D /* Dosis-Medium.otf */; };
+		29F5B6DA22A947CB00E4833D /* Dosis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29F5B6D322A947CB00E4833D /* Dosis-ExtraLight.otf */; };
+		29F5B6DB22A947CB00E4833D /* Dosis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29F5B6D422A947CB00E4833D /* Dosis-ExtraBold.otf */; };
+		29F5B6DC22A947CB00E4833D /* Dosis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29F5B6D522A947CB00E4833D /* Dosis-SemiBold.otf */; };
+		29F5B6DD22A947CB00E4833D /* Dosis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29F5B6D622A947CB00E4833D /* Dosis-Bold.otf */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -61,6 +68,13 @@
 		291C82D6229C25A600700FEF /* TestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
 		291C82D7229C25A600700FEF /* UserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewCell.h; sourceTree = "<group>"; };
 		291C82D8229C25A600700FEF /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
+		29F5B6D022A947CB00E4833D /* Dosis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Regular.otf"; sourceTree = "<group>"; };
+		29F5B6D122A947CB00E4833D /* Dosis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Light.otf"; sourceTree = "<group>"; };
+		29F5B6D222A947CB00E4833D /* Dosis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Medium.otf"; sourceTree = "<group>"; };
+		29F5B6D322A947CB00E4833D /* Dosis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraLight.otf"; sourceTree = "<group>"; };
+		29F5B6D422A947CB00E4833D /* Dosis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.otf"; sourceTree = "<group>"; };
+		29F5B6D522A947CB00E4833D /* Dosis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.otf"; sourceTree = "<group>"; };
+		29F5B6D622A947CB00E4833D /* Dosis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.otf"; sourceTree = "<group>"; };
 		593B3955C2E2DDA6DD34BF3B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CPTGridListManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPTGridListManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +167,28 @@
 			path = ExampleCollectionViewCells;
 			sourceTree = "<group>";
 		};
+		29F5B6CE22A947CB00E4833D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29F5B6CF22A947CB00E4833D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29F5B6CF22A947CB00E4833D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				29F5B6D022A947CB00E4833D /* Dosis-Regular.otf */,
+				29F5B6D122A947CB00E4833D /* Dosis-Light.otf */,
+				29F5B6D222A947CB00E4833D /* Dosis-Medium.otf */,
+				29F5B6D322A947CB00E4833D /* Dosis-ExtraLight.otf */,
+				29F5B6D422A947CB00E4833D /* Dosis-ExtraBold.otf */,
+				29F5B6D522A947CB00E4833D /* Dosis-SemiBold.otf */,
+				29F5B6D622A947CB00E4833D /* Dosis-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +236,7 @@
 				6003F5A6195388D20070C39A /* CPTGridListViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				29F5B6CE22A947CB00E4833D /* Resources */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for CPTGridListManager";
@@ -342,13 +379,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				29F5B6D722A947CB00E4833D /* Dosis-Regular.otf in Resources */,
 				291C82DB229C25A600700FEF /* SampleImages.xcassets in Resources */,
+				29F5B6DB22A947CB00E4833D /* Dosis-ExtraBold.otf in Resources */,
+				29F5B6D822A947CB00E4833D /* Dosis-Light.otf in Resources */,
 				291C82E1229C25A600700FEF /* TestCollectionViewCell.xib in Resources */,
 				291C82E0229C25A600700FEF /* UserCollectionViewCell.xib in Resources */,
+				29F5B6DC22A947CB00E4833D /* Dosis-SemiBold.otf in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				29F5B6D922A947CB00E4833D /* Dosis-Medium.otf in Resources */,
 				291C82D9229C25A600700FEF /* TestCollectionViewSupplementaryView.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				29F5B6DA22A947CB00E4833D /* Dosis-ExtraLight.otf in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				29F5B6DD22A947CB00E4833D /* Dosis-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
