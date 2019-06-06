@@ -54,19 +54,18 @@
 		22AA6BC9D4A94A5022C658B3918C4F87 /* Pods-CPTGridListManager_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CPTGridListManager_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		22E2749292DFDC36DC12EABF901970D3 /* CPTGridListTransitionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPTGridListTransitionManager.m; sourceTree = "<group>"; };
 		2557E6ABE5AD61302AD5CA24BBC4A9F7 /* Pods-CPTGridListManager_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CPTGridListManager_Example-umbrella.h"; sourceTree = "<group>"; };
-		29F5B6E322A95A8600E4833D /* XcodeWarnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = XcodeWarnings.xcconfig; path = ../../../../CPTGridListManager/XcodeWarnings.xcconfig; sourceTree = "<group>"; };
 		2A2F126B918C7A56D763DD834401B372 /* Pods-CPTGridListManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CPTGridListManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3769266407CC88ED3D3B6837AB2DD308 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3873B8ADCF4C49F64604ABCD71DB5EDE /* CPTGridListManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CPTGridListManager-dummy.m"; sourceTree = "<group>"; };
-		3EBC7DD2B67725DF1579C127E4AE07E4 /* CPTGridListManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CPTGridListManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3EBC7DD2B67725DF1579C127E4AE07E4 /* CPTGridListManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CPTGridListManager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		45A91FDE81C2D18861DA3090863ACB2C /* Pods-CPTGridListManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CPTGridListManager_Example.release.xcconfig"; sourceTree = "<group>"; };
-		47F0D8595853573548671646F068D9A2 /* Pods_CPTGridListManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPTGridListManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47F0D8595853573548671646F068D9A2 /* Pods_CPTGridListManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CPTGridListManager_Tests.framework; path = "Pods-CPTGridListManager_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		551BD3DCCED4FB63381F8039920B4C8B /* CPTGridListTransitionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CPTGridListTransitionManager.h; sourceTree = "<group>"; };
 		5C746D15D2510CC5A4D92010E590C255 /* CPTGridListProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CPTGridListProtocols.h; sourceTree = "<group>"; };
 		5D93E5D42EB97160257847B1B5333DB0 /* Pods-CPTGridListManager_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CPTGridListManager_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5E7228311386285CD54F12879B498066 /* CPTGridListLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPTGridListLayout.m; sourceTree = "<group>"; };
 		5FB9C546505053350E4CBE32925FCF14 /* Pods-CPTGridListManager_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CPTGridListManager_Tests-umbrella.h"; sourceTree = "<group>"; };
-		616F22C1F4EC5D9EFF39810E208C117F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		616F22C1F4EC5D9EFF39810E208C117F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		6436B5FCF16A271A1E39A0F47D0D78DB /* CPTGridListManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CPTGridListManager.xcconfig; sourceTree = "<group>"; };
 		6937491D70411A956FC7EED4A9FB32A1 /* Pods-CPTGridListManager_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CPTGridListManager_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6AD84D59A784FDD9F465BFBB790DF16C /* CPTGridListManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CPTGridListManager-umbrella.h"; sourceTree = "<group>"; };
@@ -77,7 +76,7 @@
 		7D3567D3B8A826A7593643AB0A4CD73C /* CPTGridListLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CPTGridListLayoutAttributes.h; sourceTree = "<group>"; };
 		81FFA3FAE08F64C3A6087EF0E3431462 /* Pods-CPTGridListManager_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CPTGridListManager_Example-dummy.m"; sourceTree = "<group>"; };
 		84CF6E9501DEBBC4CDAB9399005D7276 /* Pods-CPTGridListManager_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CPTGridListManager_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9787C0460CE382C05EEA0499DBBDC066 /* Pods-CPTGridListManager_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CPTGridListManager_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		98015534B2517CA07DF1C9F7A8DC550E /* CPTGridListManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTGridListManager.h; path = CPTGridListManager/Classes/CPTGridListManager.h; sourceTree = "<group>"; };
 		B01F51F4B7FC2D6BFA6395DB6E0FD770 /* Pods-CPTGridListManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CPTGridListManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,13 +86,13 @@
 		C0611F21EB68AFD312F9E0AFC7B6362C /* CPTGridListManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CPTGridListManager.modulemap; sourceTree = "<group>"; };
 		CB287285D44A6C229E140D8269ECE839 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8966146A944F53F6C8F209743ACD09 /* Pods-CPTGridListManager_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CPTGridListManager_Example.modulemap"; sourceTree = "<group>"; };
-		CF3603B731C25E515FC51E81765F3EF6 /* Pods_CPTGridListManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPTGridListManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D65D1D6E7AAA8042F50CF267CFC634CB /* CPTGridListManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPTGridListManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3603B731C25E515FC51E81765F3EF6 /* Pods_CPTGridListManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CPTGridListManager_Example.framework; path = "Pods-CPTGridListManager_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D65D1D6E7AAA8042F50CF267CFC634CB /* CPTGridListManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CPTGridListManager.framework; path = CPTGridListManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D6FB8182E5DFCA957173754FF9BCE1F4 /* Pods-CPTGridListManager_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CPTGridListManager_Tests.modulemap"; sourceTree = "<group>"; };
 		E6C6E08B3BB50AA793912BED40592683 /* CPTGridListTransitionLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CPTGridListTransitionLayout.h; sourceTree = "<group>"; };
 		E99101120BF983FB8A3030993F99F168 /* CPTGridListTransitionLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CPTGridListTransitionLayout.m; sourceTree = "<group>"; };
-		EAB878E931A7DCC72785118E04B94FF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EAB878E931A7DCC72785118E04B94FF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		F245268D3D3C91F1E8F7C0241DE0CE16 /* CPTGridListManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CPTGridListManager-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +164,6 @@
 		28AC874786E2E642A6731ABBCD3BA437 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				29F5B6E322A95A8600E4833D /* XcodeWarnings.xcconfig */,
 				C0611F21EB68AFD312F9E0AFC7B6362C /* CPTGridListManager.modulemap */,
 				6436B5FCF16A271A1E39A0F47D0D78DB /* CPTGridListManager.xcconfig */,
 				3873B8ADCF4C49F64604ABCD71DB5EDE /* CPTGridListManager-dummy.m */,
@@ -649,7 +647,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};

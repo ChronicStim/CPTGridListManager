@@ -77,7 +77,7 @@
                     if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
                         activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
                     } else {
-                        NSLog(@"Cell Item for (%ld,%ld) could not locate matching attributes in NextLayout",activeLayoutAttributesGridList.indexPath.section,activeLayoutAttributesGridList.indexPath.item);
+                        NSLog(@"Cell Item for (%ld,%ld) could not locate matching attributes in NextLayout",(long)activeLayoutAttributesGridList.indexPath.section,(long)activeLayoutAttributesGridList.indexPath.item);
                     }
                     
                 }
@@ -95,7 +95,7 @@
                     if (nil != nextLayoutAttributes && [nextLayoutAttributes isMemberOfClass:[CPTGridListLayoutAttributes class]]) {
                         activeLayoutAttributesGridList.nextLayoutCellFrame = nextLayoutAttributes.frame;
                     } else {
-                        NSLog(@"%@ for Section %ld could not locate matching attributes in NextLayout",activeLayoutAttributesGridList.representedElementKind,activeLayoutAttributesGridList.indexPath.section   );
+                        NSLog(@"%@ for Section %ld could not locate matching attributes in NextLayout",activeLayoutAttributesGridList.representedElementKind,(long)activeLayoutAttributesGridList.indexPath.section);
                     }
                     
                 }
