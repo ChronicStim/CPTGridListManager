@@ -6,13 +6,12 @@
 //  Copyright © 2019 Chronic Stimulation, LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CPTGridListAnimatedView.h"
 #import "CPTGridListLayout.h"
 
-@interface CPTGridListAnimatedButton : UIButton
+@interface CPTGridListAnimatedButton : CPTGridListAnimatedView
 
-@property (nonatomic, strong) IBInspectable UIColor *lineColor;
-@property (nonatomic, assign) NSTimeInterval animationDuration;
+@property (nonatomic, weak) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
 /**
  Triggers the button animation action from its currently displayed icon to the icon for the nextLayoutState. You can choose to have this switch be animated (recommended) or instant. If animated, it's recommended to set the animationDuration of the button to the same value as the layout transition animation.

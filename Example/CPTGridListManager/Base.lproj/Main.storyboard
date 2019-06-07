@@ -61,41 +61,28 @@
                     </view>
                     <navigationItem key="navigationItem" id="6iJ-Z4-BlO">
                         <barButtonItem key="rightBarButtonItem" id="hMS-Nm-Ek6">
-                            <view key="customView" opaque="NO" contentMode="scaleToFill" id="Y7Z-5b-tpy">
-                                <rect key="frame" x="276" y="5.5" width="83" height="33"/>
+                            <view key="customView" opaque="NO" contentMode="scaleToFill" id="Y7Z-5b-tpy" customClass="CPTGridListAnimatedButton">
+                                <rect key="frame" x="319" y="2" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWC-9s-uS7" userLabel="CPTGridListAnimatedButton" customClass="CPTGridListAnimatedButton">
-                                        <rect key="frame" x="25" y="0.0" width="33" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="qWC-9s-uS7" secondAttribute="height" multiplier="1:1" id="WdC-Ya-x71"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eaw-WD-mld"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="qWC-9s-uS7" firstAttribute="height" relation="lessThanOrEqual" secondItem="Y7Z-5b-tpy" secondAttribute="height" id="G0B-Qh-yGH"/>
-                                    <constraint firstItem="qWC-9s-uS7" firstAttribute="centerX" secondItem="Y7Z-5b-tpy" secondAttribute="centerX" id="b9L-YQ-mP5"/>
-                                    <constraint firstItem="qWC-9s-uS7" firstAttribute="centerY" secondItem="Y7Z-5b-tpy" secondAttribute="centerY" id="bPa-Nu-CML"/>
-                                    <constraint firstItem="qWC-9s-uS7" firstAttribute="width" relation="lessThanOrEqual" secondItem="Y7Z-5b-tpy" secondAttribute="width" id="bcO-p3-ixe"/>
-                                </constraints>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oIF-LC-H9N" appends="YES" id="cWu-7z-rcb"/>
+                                </connections>
                             </view>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Xcf-mq-jxZ" id="RKC-v1-YmP"/>
-                        <outlet property="rotationButton" destination="qWC-9s-uS7" id="twm-g5-q5o"/>
+                        <outlet property="rotationButton" destination="Y7Z-5b-tpy" id="nSc-rW-Q79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oIF-LC-H9N">
+                    <connections>
+                        <action selector="buttonTapped:" destination="BYZ-38-t0r" id="Nbm-JA-jou"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="410" y="-179"/>
         </scene>

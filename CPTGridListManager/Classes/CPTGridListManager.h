@@ -21,3 +21,4 @@ FOUNDATION_EXPORT const unsigned char CPTGridListManagerVersionString[];
 #import <CPTGridListManager/CPTGridListAnimatedButton.h>
 #import <CPTGridListManager/CPTGridListTransitionLayout.h>
 #import <CPTGridListManager/CPTGridListProtocols.h>
+#import <CPTGridListManager/CPTGridListAnimatedView.h>

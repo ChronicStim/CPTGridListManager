@@ -17,6 +17,7 @@
 #import "CPTGridListTransitionLayout.h"
 #import "CPTGridListTransitionManager.h"
 #import "CPTGridListAnimatedButton.h"
+#import "CPTGridListAnimatedView.h"
 
 FOUNDATION_EXPORT double CPTGridListManagerVersionNumber;
 FOUNDATION_EXPORT const unsigned char CPTGridListManagerVersionString[];
