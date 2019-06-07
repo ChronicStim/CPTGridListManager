@@ -15,6 +15,7 @@
     CGFloat _gridLineWidth;
     CGFloat _listLineWidth;
     CGFloat _stepHeightDelta;
+    CGFloat _stepWidthDelta;
     NSInteger _itemsCount;
     CAShapeLayer *_lineLayer1;
     CAShapeLayer *_lineLayer2;
@@ -22,6 +23,9 @@
     CAShapeLayer *_lineLayer4;
     CAShapeLayer *_lineLayer5;
     CAShapeLayer *_lineLayer6;
+    CAShapeLayer *_lineLayer7;
+    CAShapeLayer *_lineLayer8;
+    CAShapeLayer *_lineLayer9;
 }
 @property (nonatomic, strong) NSMutableArray <CAShapeLayer *> *lineLayers;
 @property (nonatomic, assign) LayoutState nextLayoutState;
@@ -97,12 +101,13 @@
 
 -(void)applyInitialButtonConditions;
 {
-    _gridStrokeEnd = 0.8f;
+    _gridStrokeEnd = 0.6f;
     _listStrokeEnd = 1.0f;
     _gridLineWidth = 4.0f;
     _listLineWidth = 2.0f;
     _stepHeightDelta = 0.3f;
-    _itemsCount = 6;
+    _stepWidthDelta = 1.0f/3.0f;
+    _itemsCount = 9;
     self.animationDuration = 0.25;
     self.lineColor = [UIColor redColor];
     self.contentMode = UIViewContentModeScaleAspectFit;
@@ -132,8 +137,11 @@
     _lineLayer4 = [CAShapeLayer layer];
     _lineLayer5 = [CAShapeLayer layer];
     _lineLayer6 = [CAShapeLayer layer];
-    
-    [_lineLayers addObjectsFromArray:@[_lineLayer1,_lineLayer2,_lineLayer3,_lineLayer4,_lineLayer5,_lineLayer6]];
+    _lineLayer7 = [CAShapeLayer layer];
+    _lineLayer8 = [CAShapeLayer layer];
+    _lineLayer9 = [CAShapeLayer layer];
+
+    [_lineLayers addObjectsFromArray:@[_lineLayer1,_lineLayer2,_lineLayer3,_lineLayer4,_lineLayer5,_lineLayer6,_lineLayer7,_lineLayer8,_lineLayer9]];
     return _lineLayers;
 }
 
@@ -162,21 +170,25 @@
 -(void)drawLineForInitialState:(LayoutState)initialLayoutState;
 {
     CGFloat heightDelta = 0.2;
+    CGFloat offsetX1 = 0.0f;
+    CGFloat offsetX2 = 0.0f;
     for (int index = 0; index < _itemsCount; index++) {
         
         CAShapeLayer *lineLayer = self.lineLayers[index];
-        CGFloat offsetX = 0.0f;
-        if (index % 2 == 0) {
+        if (index % 3 == 0) {
             if (index > 0) {
                 heightDelta += _stepHeightDelta;
             }
+            offsetX1 = 0.0f;
         } else {
-            offsetX = self.bounds.size.width;
+            offsetX1 = offsetX2;
         }
-        
+        offsetX2 = offsetX1 + _stepWidthDelta;
+
         UIBezierPath *path = [UIBezierPath bezierPath];
-        [path moveToPoint:CGPointMake(offsetX, (self.bounds.size.height * heightDelta))];
-        [path addLineToPoint:CGPointMake((self.bounds.size.width / 2.0f), self.bounds.size.height * heightDelta)];
+        CGFloat width = self.bounds.size.width;
+        [path moveToPoint:CGPointMake(offsetX1 * width, (self.bounds.size.height * heightDelta))];
+        [path addLineToPoint:CGPointMake(offsetX2 * width, self.bounds.size.height * heightDelta)];
         lineLayer.path = path.CGPath;
         lineLayer.strokeColor = [self.lineColor CGColor];
         lineLayer.lineWidth = _listLineWidth;
